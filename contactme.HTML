@@ -1,142 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>contact me </title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="icon" type="image/x-icon" href="/assets/image1_0.jpg">
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Blog · Puntland Technology Expo 2025 | Maho Mire</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
+      color: #0a0a0a;
+      scroll-behavior: smooth;
+    }
+    .grid-bg-light {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, #e4e4e7 0.5px, transparent 0.5px),
+                        linear-gradient(to bottom, #e4e4e7 0.5px, transparent 0.5px);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-fade-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .animate-fade-left {
+      animation: fadeInLeft 0.6s ease-out forwards;
+    }
+    .animate-fade-right {
+      animation: fadeInRight 0.6s ease-out forwards;
+    }
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+    }
+    .gallery-img {
+      transition: transform 0.25s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-img:hover {
+      transform: scale(1.01);
+      filter: brightness(0.98);
+    }
+    /* Modal lightbox for images */
+    .lightbox {
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(8px);
+      transition: opacity 0.2s ease;
+    }
+  </style>
 </head>
 <body>
-  <header>
-   
-    <ul>
-        <li><a class="mimi"  href="index.html">Home</a></li>
-        <li><a class="mimi"  href="contact me.HTML">CONTACT</a></li>
-    </ul>
-</header>
-  <form id="email-form">      
-    <input name="name"  type="text" id="name" class="feedback-input" placeholder="Name" required />   
-    <input name="email" type="email" id="email"  class="feedback-input" placeholder="Email" required/>
-    <textarea name="text" id="message" class="feedback-input" placeholder="Comment" required></textarea>
-    <input type="submit" value="Send"/>
-  </form>
-</body>
-<style>
- 
 
-body { background:#333; }
-form { max-width:420px; margin:50px auto; }
+  <!-- ========== BLOG HEADER / NAV ========== -->
+  <header class="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">Maho Mire</a>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="text-gray-600 hover:text-black transition">Home</a>
+        <a href="#" class="text-gray-600 hover:text-black transition">Portfolio</a>
+        <a href="#" class="text-black font-medium border-b-2 border-black pb-0.5">Blog</a>
+      </div>
+    </div>
+  </header>
 
+  <main>
+    <!-- Hero Blog Section -->
+    <section class="relative overflow-hidden bg-white">
+      <div class="absolute inset-0 grid-bg-light opacity-20 pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
+        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-gray-100 text-xs font-mono tracking-wide text-gray-600 animate-fade-up">Event recap / March 2025</div>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 animate-fade-up delay-100">
+          Puntland Technology Expo<br> <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-500">2025 Edition</span>
+        </h1>
+        <p class="text-gray-500 text-lg mt-5 max-w-2xl mx-auto animate-fade-up delay-200">
+          Showcasing innovation, youth-driven tech, and a vision to solve unemployment in Somalia.
+        </p>
+        <div class="flex items-center justify-center gap-4 mt-6 text-sm text-gray-400 animate-fade-up delay-300">
+          <span>📅 March 12–14, 2025</span>
+          <span>📍 Garowe, Puntland</span>
+          <span>🎤 Presenter & Innovator</span>
+        </div>
+      </div>
+    </section>
 
-header{
-    display: flex;
-    align-items: center;
-   
-}
+    <!-- Blog Content: Full story with images -->
+    <article class="max-w-4xl mx-auto px-6 py-12 md:py-16">
+      <!-- intro block -->
+      <div class="prose prose-lg prose-gray max-w-none">
+        <p class="text-gray-700 leading-relaxed text-lg animate-fade-left">
+          Every year, the <strong class="text-black">Puntland Technology Expo</strong> brings together the brightest minds — scientists, economists, 
+          university leaders, and tech pioneers — to address real societal challenges. This year, I had the honor 
+          of being <strong>one of the featured presenters</strong>, representing a new wave of developers building solutions 
+          for Somalia's most urgent problems.
+        </p>
 
-ul{
-    display: flex;
-    margin: 0px 500px ;
-    justify-content: space-around;
-    margin-top:30px;
-}
-li{
-    margin: 0px 20px;
-    display: inline-block;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.mimi{
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-     .mimi:hover{
-        color:rgb(255, 53, 53);
-        font-size: large;
-     }
-     
-  @media screen and (max-width: 690px){
-    ul{
-      margin: 20px 80px;
-    }}
+        <div class="my-12 grid md:grid-cols-2 gap-8 items-center">
+          <!-- left description -->
+          <div class="animate-fade-left">
+            <h2 class="text-2xl font-bold tracking-tight mb-3">Presenting a vision to fight unemployment</h2>
+            <p class="text-gray-600 leading-relaxed">
+              My presentation focused on a <strong>job-tech ecosystem</strong> designed to bridge the gap between employers, 
+              freelancers, and volunteers across Puntland and Somalia. The audience — including government officials, 
+              tech leaders, and university deans — responded with overwhelming enthusiasm.
+            </p>
+            <p class="text-gray-600 leading-relaxed mt-3">
+              The core idea: a centralized platform where job seekers, volunteers, and local businesses connect 
+              seamlessly — reducing unemployment by making opportunities visible and accessible. The expo became 
+              the perfect stage to demonstrate the <strong>main prototype</strong> and gather real-time feedback.
+            </p>
+          </div>
+          <!-- image 1: presenting presentation -->
+          <div class="rounded-2xl overflow-hidden shadow-xl animate-fade-right">
+            <img 
+              src="https://i.ibb.co/9kh9kKjC/d882ee18-b41a-4fd5-a9ab-83c86f6b4318.jpg" 
+              alt="Maho Mire presenting at Puntland Technology Expo" 
+              class="w-full h-auto object-cover gallery-img"
+              onclick="openLightbox(this.src)"
+            >
+            <div class="bg-gray-50 p-2 text-center text-xs text-gray-500">🎤 Delivering the keynote presentation — “Tech for Employment”</div>
+          </div>
+        </div>
 
+        <!-- second block: app demo -->
+        <div class="my-16 grid md:grid-cols-2 gap-8 items-center">
+          <div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-xl animate-fade-left">
+            <img 
+              src="https://i.ibb.co/twCYqxKL/bce3b8b1-dd0d-4886-8422-74b1b3026378.jpg" 
+              alt="Maho Mire showcasing the job app prototype" 
+              class="w-full h-auto object-cover gallery-img"
+              onclick="openLightbox(this.src)"
+            >
+            <div class="bg-gray-50 p-2 text-center text-xs text-gray-500">📱 Live demo of the job & volunteer matching platform</div>
+          </div>
+          <div class="order-1 md:order-2 animate-fade-right">
+            <span class="inline-block px-2 py-1 bg-black/5 rounded-md text-xs font-mono mb-2">🔍 The app demo</span>
+            <h2 class="text-2xl font-bold tracking-tight mb-3">JobConnect — a hyperlocal solution</h2>
+            <p class="text-gray-600 leading-relaxed">
+              I walked the audience through the <strong>JobConnect prototype</strong> — a mobile-first platform where users can 
+              browse job listings, post volunteer opportunities, and connect with employers in their region. 
+              The live demo highlighted the main dashboard, job filtering by distance, and an intuitive application flow.
+            </p>
+            <p class="text-gray-600 leading-relaxed mt-3">
+              The feedback was electric: <strong>industry leaders and young developers</strong> approached me after the session, 
+              sharing how this could reshape the local job market. Many praised the idea of integrating volunteer 
+              work as a pathway to employment — a fresh angle that resonated deeply.
+            </p>
+          </div>
+        </div>
 
-.feedback-input {
-  color:white;
-  font-weight:500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border:2px solid #4d4c4c;
-  transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
-  width:100%;
-  box-sizing: border-box;
-  outline:0;
-}
+        <!-- audience / attendance shot -->
+        <div class="my-16 bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="animate-fade-left">
+              <h2 class="text-2xl font-bold tracking-tight mb-3">A gathering of change-makers</h2>
+              <p class="text-gray-600 leading-relaxed">
+                The expo wasn't just about presentations — it was a <strong>vibrant convergence</strong> of brilliant minds. 
+                From university researchers showcasing agricultural AI to economists debating fiscal policy, 
+                the energy was inspiring. Hundreds of attendees, including students, entrepreneurs, and 
+                international partners, filled the hall.
+              </p>
+              <p class="text-gray-600 leading-relaxed mt-3">
+                Being part of this ecosystem reminded me why technology matters most when it serves the 
+                community. I exchanged ideas with other developers, received mentorship offers, and 
+                connected with potential collaborators who believe in the <strong>mission to reduce unemployment</strong> 
+                through digital tools.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="bg-white px-3 py-1 rounded-full text-xs shadow-sm">🤝 500+ attendees</span>
+                <span class="bg-white px-3 py-1 rounded-full text-xs shadow-sm">🌍 20+ exhibitors</span>
+                <span class="bg-white px-3 py-1 rounded-full text-xs shadow-sm">🎯 10+ keynote speakers</span>
+              </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg animate-fade-right">
+              <img 
+                src="https://i.ibb.co/4ZpyRTxc/fdb937e4-f91f-4121-bbf0-8f0566387e3d.jpg" 
+                alt="Crowd and attendees at Puntland Technology Expo" 
+                class="w-full h-auto object-cover gallery-img"
+                onclick="openLightbox(this.src)"
+              >
+              <div class="bg-white p-2 text-center text-xs text-gray-500">🏟️ The main expo hall — packed with innovators and supporters</div>
+            </div>
+          </div>
+        </div>
 
-.feedback-input:focus { border:2px solid #CC4949; }
+        <!-- extended impact and next steps -->
+        <div class="my-12 border-l-4 border-gray-800 pl-6 bg-gray-50/40 p-6 rounded-r-2xl animate-fade-up delay-200">
+          <p class="text-gray-800 italic text-lg leading-relaxed">
+            “The majority of people liked and welcomed the idea as a big improvement in how to apply and search for jobs locally. 
+            This isn't just an app — it's a movement toward economic empowerment.”
+          </p>
+          <p class="text-gray-500 text-sm mt-3">— Maho Mire, on the audience reception</p>
+        </div>
 
-textarea {
-  height: 150px;
-  line-height: 150%;
-  resize:vertical;
-}
+        <div class="grid md:grid-cols-2 gap-8 my-16">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm animate-fade-left">
+            <div class="text-3xl mb-2">🚀</div>
+            <h3 class="font-bold text-xl">What's next for JobConnect?</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+              I'm actively developing the full-stack version of the platform using React Native, Supabase, 
+              and real-time features. The expo gave me crucial validation and beta testers — expect a 
+              limited pilot launch in Q3 2025 across major cities in Puntland.
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm animate-fade-right">
+            <div class="text-3xl mb-2">💡</div>
+            <h3 class="font-bold text-xl">Beyond the expo</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+              I left the event with new partnerships, an expanded network, and a reinforced drive to 
+              build tech that matters. Stay tuned for more updates, open-source contributions, and 
+              community workshops.
+            </p>
+          </div>
+        </div>
 
-[type="submit"] {
-  
-  width: 100%;
-  background:#fbff15;
-  border-radius:20px;
-  border:0;
-  cursor:pointer;
-  color:rgb(0, 0, 0);
-  font-size:24px;
-  padding-top:10px;
-  padding-bottom:10px;
-  transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
-}
-[type="submit"]:hover {   background:rgb(255, 86, 73);}
-</style>
+        <!-- image gallery extra: showcase vibe -->
+        <div class="my-12 text-center">
+          <h3 class="text-2xl font-semibold mb-5">📸 Moments from the Expo</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="rounded-xl overflow-hidden shadow-md hover-scale">
+              <img src="https://i.ibb.co/9kh9kKjC/d882ee18-b41a-4fd5-a9ab-83c86f6b4318.jpg" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src)" alt="Presentation shot 1">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-md hover-scale">
+              <img src="https://i.ibb.co/twCYqxKL/bce3b8b1-dd0d-4886-8422-74b1b3026378.jpg" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src)" alt="App demo shot">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-md hover-scale">
+              <img src="https://i.ibb.co/4ZpyRTxc/fdb937e4-f91f-4121-bbf0-8f0566387e3d.jpg" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src)" alt="Audience and attendance">
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-3">Tap any image to expand — capturing the energy of innovation.</p>
+        </div>
 
+        <div class="border-t border-gray-200 my-12 pt-8 text-center">
+          <a href="#" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition shadow-md">
+            ← Back to home
+          </a>
+          <p class="text-gray-400 text-sm mt-5">I'm continuing to build — follow my journey for more updates on JobConnect and tech for social impact.</p>
+        </div>
+      </div>
+    </article>
+  </main>
 
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white mt-16 py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+      <p>© 2026 Maho Mire — Puntland Technology Expo Blog</p>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-black transition">GitHub</a>
+        <a href="#" class="hover:text-black transition">LinkedIn</a>
+        <a href="#" class="hover:text-black transition">Twitter</a>
+      </div>
+    </div>
+  </footer>
 
+  <!-- Lightbox Modal (for image enlargement) -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center lightbox" onclick="closeLightbox()">
+    <div class="relative max-w-4xl max-h-[90vh] p-4">
+      <img id="lightboxImg" src="" alt="Enlarged view" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+      <button class="absolute top-4 right-6 text-white text-3xl hover:text-gray-300 transition" onclick="closeLightbox()">&times;</button>
+    </div>
+  </div>
 
-<script>
-    // Initialize EmailJS with your user ID
-    (function() {
-        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
-    })();
-
-    document.getElementById('email-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        const templateParams = {
-           name: full_name,
-            email: email_id,
-            message: message,
-        };
-
-        emailjs.send('service_1jkksia', 'template_qoer2wq', templateParams)
-            .then(function(response) {
-                alert('Email sent successfully!', response.status, response.text);
-                document.getElementById('email-form').reset(); // Reset form
-            }, function(error) {
-                alert('Failed to send email. Please try again later.', error);
-            });
+  <script>
+    // Lightbox functionality
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      lightboxImg.src = src;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && !lightbox.classList.contains('hidden')) {
+          closeLightbox();
+        }
+      }
     });
-</script>
-
-</script>
+  </script>
+</body>
 </html>
